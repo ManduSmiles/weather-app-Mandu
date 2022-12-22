@@ -52,6 +52,7 @@ function showSearchWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  console.log(response.data);
 }
 //gets current position when that button is clicked
 function getPosition(position) {
