@@ -33,9 +33,6 @@ function searchCityValue(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");
   let city = searchInput.value;
-  // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  // axios.get(apiUrl).then(showSearchWeather);
   search(city);
 }
 
@@ -64,22 +61,6 @@ function getPosition(position) {
   axios.get(apiUrl).then(showSearchWeather);
   console.log(apiUrl);
 }
-
-//function showCurrentCity(response) {
-//let displayCurrentCity = document.querySelector("h1");
-//displayCurrentCity.innerHTML = response.data[0].name;
-//}
-
-//below code is redunant
-//function showPositionWeather(response) {
-//let temperature = Math.round(response.data.main.temp);
-// let currentTemperature = document.querySelector("#temperature");
-//currentTemperature.innerHTML = temperature;
-//let lat = response.data.coord.lat;
-//let lon = response.data.coord.lon;
-//let apiUrlName = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`;
-// axios.get(apiUrlName).then(showCurrentCity);
-//}
 
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(getPosition);
