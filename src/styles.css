@@ -1,5 +1,8 @@
 body {
   font-family: "Poppins", sans-serif;
+  background: url("../images/skyimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 button {
   border: 1px solid;
@@ -36,15 +39,14 @@ li {
   left: 375px;
 }
 .container {
-  background: url("../images/skyimage.jpg");
-  background-repeat: no-repeat;
-  background-size: 700px 500px;
+  background: rgba(69, 93, 122, 0.2);
   border: 1px solid;
   border-radius: 10px;
   color: #38598b;
   max-width: 700px;
   margin: 25px auto;
 }
+
 .current-description {
   font-size: 20px;
 }
