@@ -35,10 +35,10 @@ li {
   left: 375px;
 }
 .container {
-  background: rgba(69, 93, 122, 0.2);
+  background: rgba(255, 255, 255, 0.4);
   border: 1px solid;
   border-radius: 10px;
-  color: #38598b;
+  color: #36454f;
   max-width: 700px;
   margin: 25px auto;
 }
@@ -48,6 +48,7 @@ li {
 }
 .temperature {
   padding-left: 15px;
+  top: -20px;
   position: relative;
   font-size: 100px;
 }
@@ -57,8 +58,8 @@ li {
   top: -34px;
 }
 .current {
+  color: #007cb9;
   font-size: 150px;
-
   margin: 50px auto 50px;
 }
 .col-2 {
