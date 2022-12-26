@@ -21,7 +21,7 @@ a {
   text-decoration: none;
 }
 ul {
-  padding: 65px 20px;
+  margin: 65px 20px;
 }
 li {
   list-style: none;
@@ -47,7 +47,7 @@ li {
   font-size: 20px;
 }
 .temperature {
-  padding-left: 15px;
+  margin-left: 20px;
   top: -20px;
   position: relative;
   font-size: 100px;
@@ -55,12 +55,12 @@ li {
 .units {
   font-size: 16px;
   position: relative;
-  top: -34px;
+  top: -60px;
 }
 .current {
   color: #007cb9;
-  font-size: 150px;
-  margin: 50px auto 50px;
+  font-size: 125px;
+  margin: 50px 20px 50px;
 }
 .col-2 {
   margin-top: 25px;
