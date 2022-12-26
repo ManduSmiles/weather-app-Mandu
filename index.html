@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Newmarket Weather</title>
+    <title>Mandus Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,18 +43,15 @@
       <h6 id="currentTimeDisplay"></h6>
       <h6 id="current-description"></h6>
       <div class="row">
-        <div class="col-4">
+        <div class="col-7">
           <i class="fa-regular fa-sun current"></i>
+          <span class="temperature" id="temperature"></span
+          ><span class="units">
+            <a href="#" id="celcius-link"> °C </a>
+          </span>
         </div>
-        <div class="col-4">
-          <h2>
-            <span class="temperature" id="temperature"></span
-            ><span class="units">
-              <a href="#" id="celcius-link"> °C </a>
-            </span>
-          </h2>
-        </div>
-        <div class="col-4">
+
+        <div class="col-5">
           <ul>
             <li>Humidity: <span id="humidity"></span>%</li>
             <li>Wind: <span id="wind">23</span> km/hr</li>
