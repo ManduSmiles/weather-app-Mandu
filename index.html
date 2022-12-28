@@ -34,87 +34,94 @@
   </head>
   <body>
     <div class="container">
-      <button id="current-location">Current Location</button>
-      <form class="search-city" id="city-form">
-        <input type="text" placeholder="Enter City Here" id="city-input" />
-        <button type="submit" class="btn btn-primary">Search</button>
-      </form>
-      <h1 id="currentCity"></h1>
-      <h6 id="currentTimeDisplay"></h6>
-      <h6 id="current-description"></h6>
-      <div class="row">
-        <div class="col-7">
-          <i class="fa-regular fa-sun current"></i>
-          <span class="temperature" id="temperature"></span
-          ><span class="units">
-            <a href="#" id="celcius-link"> °C | </a>
-            <a href="#" id="fahrenheit-link"> °F</a>
-          </span>
-        </div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <button id="current-location">Current Location</button>
+          <form class="search-city" id="city-form">
+            <input
+              type="text"
+              placeholder="Enter City Here 🔍"
+              id="city-input"
+            />
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          <h1 id="currentCity"></h1>
+          <h6 id="currentTimeDisplay"></h6>
+          <h6 id="current-description"></h6>
+          <div class="row">
+            <div class="col-7">
+              <i class="fa-regular fa-sun current"></i>
+              <span class="temperature" id="temperature"></span
+              ><span class="units">
+                <a href="#" id="celcius-link"> °C | </a>
+                <a href="#" id="fahrenheit-link"> °F</a>
+              </span>
+            </div>
 
-        <div class="col-5">
-          <ul>
-            <li>Feels Like: <span id="feels-like"></span></li>
-            <li>Humidity: <span id="humidity"></span>%</li>
-            <li>Wind: <span id="wind">23</span> km/hr</li>
-          </ul>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-2">
-          Sun
-          <div class="sunday">
-            <i class="fa-solid fa-cloud weather-icon"></i>
+            <div class="col-5">
+              <ul>
+                <li>Feels Like: <span id="feels-like"></span></li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind">23</span> km/hr</li>
+              </ul>
+            </div>
           </div>
-          <div>3°C</div>
-        </div>
-        <div class="col-2">
-          Mon
-          <div class="monday">
-            <i class="fa-regular fa-sun weather-icon"></i>
+          <hr />
+          <div class="row">
+            <div class="col-2">
+              Sun
+              <div class="sunday">
+                <i class="fa-solid fa-cloud weather-icon"></i>
+              </div>
+              <div>3°C</div>
+            </div>
+            <div class="col-2">
+              Mon
+              <div class="monday">
+                <i class="fa-regular fa-sun weather-icon"></i>
+              </div>
+              <div>5°C</div>
+            </div>
+            <div class="col-2">
+              Tues
+              <div class="tuesday">
+                <i class="fa-solid fa-cloud-sun weather-icon"></i>
+              </div>
+              <div>0°C</div>
+            </div>
+            <div class="col-2">
+              Wed
+              <div class="wednesday">
+                <i class="fa-regular fa-snowflake weather-icon"></i>
+              </div>
+              <div>-2°C</div>
+            </div>
+            <div class="col-2">
+              Thurs
+              <div class="thursday">
+                <i class="fa-regular fa-sun weather-icon"></i>
+              </div>
+              <div>6°C</div>
+            </div>
+            <div class="col-2">
+              Fri
+              <div class="friday">
+                <i class="fa-solid fa-cloud-sun weather-icon"></i>
+              </div>
+              <div>3°C</div>
+            </div>
           </div>
-          <div>5°C</div>
         </div>
-        <div class="col-2">
-          Tues
-          <div class="tuesday">
-            <i class="fa-solid fa-cloud-sun weather-icon"></i>
-          </div>
-          <div>0°C</div>
-        </div>
-        <div class="col-2">
-          Wed
-          <div class="wednesday">
-            <i class="fa-regular fa-snowflake weather-icon"></i>
-          </div>
-          <div>-2°C</div>
-        </div>
-        <div class="col-2">
-          Thurs
-          <div class="thursday">
-            <i class="fa-regular fa-sun weather-icon"></i>
-          </div>
-          <div>6°C</div>
-        </div>
-        <div class="col-2">
-          Fri
-          <div class="friday">
-            <i class="fa-solid fa-cloud-sun weather-icon"></i>
-          </div>
-          <div>3°C</div>
-        </div>
-      </div>
-      <div class="footer">
-        <a
-          href="https://github.com/ManduSmiles/weather-app-Mandu"
-          target="blank"
-        >
-          Open Source Code by: </a
-        ><span> Mandu for SheCodes Plus, 2022</span>
+        <small>
+          <a
+            href="https://github.com/ManduSmiles/weather-app-Mandu"
+            target="blank"
+          >
+            Open Source Code by: </a
+          ><span> Mandu for SheCodes Plus, 2022</span>
+        </small>
       </div>
     </div>
-
     <script src="src/index.js"></script>
   </body>
 </html>
