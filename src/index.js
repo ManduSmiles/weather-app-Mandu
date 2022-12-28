@@ -48,6 +48,9 @@ function showSearchWeather(response) {
   currentTemperature.innerHTML = temperature;
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#feels-like").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
