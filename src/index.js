@@ -36,9 +36,6 @@ function searchCityValue(event) {
   search(city);
 }
 
-let searchCity = document.querySelector("#city-form");
-searchCity.addEventListener("submit", searchCityValue);
-
 //displays the weather information when city is entered into search field or after current location button is selected
 function showSearchWeather(response) {
   let displayCity = document.querySelector("h1");
@@ -46,6 +43,9 @@ function showSearchWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = temperature;
+
+  celsiusTemperature = temperature;
+
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#feels-like").innerHTML = Math.round(
@@ -57,6 +57,7 @@ function showSearchWeather(response) {
   );
   console.log(response.data);
 }
+
 //gets current position when that button is clicked
 function getPosition(position) {
   let lat = position.coords.latitude;
@@ -66,11 +67,39 @@ function getPosition(position) {
   console.log(apiUrl);
 }
 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = celsiusTemperature;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
+let celsiusTemperature = null;
+
+let searchCity = document.querySelector("#city-form");
+searchCity.addEventListener("submit", searchCityValue);
+
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentPosition);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celcius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Newmarket");

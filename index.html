@@ -36,26 +36,24 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <button id="current-location">Current Location</button>
+          <button id="current-location">Current Location 🎯</button>
           <form class="search-city" id="city-form">
-            <input
-              type="text"
-              placeholder="Enter City Here 🔍"
-              id="city-input"
-            />
-            <button type="submit" class="btn btn-primary">Search</button>
+            <input type="text" placeholder="Enter City Here" id="city-input" />
+            <button type="submit" class="btn btn-primary">Search 🔍</button>
           </form>
           <h1 id="currentCity"></h1>
           <h6 id="currentTimeDisplay"></h6>
           <h6 id="current-description"></h6>
           <div class="row">
             <div class="col-7">
-              <i class="fa-regular fa-sun current"></i>
-              <span class="temperature" id="temperature"></span
-              ><span class="units">
-                <a href="#" id="celcius-link"> °C | </a>
-                <a href="#" id="fahrenheit-link"> °F</a>
-              </span>
+              <div class="current-weather-temp">
+                <i class="fa-regular fa-sun current"></i>
+                <span class="temperature" id="temperature"></span
+                ><span class="units">
+                  <a href="#" id="celcius-link" class="active"> °C | </a>
+                  <a href="#" id="fahrenheit-link"> °F</a>
+                </span>
+              </div>
             </div>
 
             <div class="col-5">
