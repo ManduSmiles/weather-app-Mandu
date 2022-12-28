@@ -36,10 +36,12 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <button id="current-location">Current Location 🎯</button>
           <form class="search-city" id="city-form">
             <input type="text" placeholder="Enter City Here" id="city-input" />
-            <button type="submit" class="btn btn-primary">Search 🔍</button>
+            <input type="submit" value="Search 🔍" />
+            <button id="current-location">
+              <span class="material-symbols-outlined"> home_pin </span>
+            </button>
           </form>
           <h1 id="currentCity"></h1>
           <h6 id="currentTimeDisplay"></h6>
@@ -58,9 +60,20 @@
 
             <div class="col-5">
               <ul>
-                <li>Feels Like: <span id="feels-like"></span></li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind">23</span> km/hr</li>
+                <li>
+                  <span class="material-symbols-outlined"> thermostat </span>
+                  Feels Like: <span id="feels-like"></span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">
+                    humidity_percentage
+                  </span>
+                  Humidity: <span id="humidity"></span>%
+                </li>
+                <li>
+                  <span class="material-symbols-outlined"> air </span> Wind:
+                  <span id="wind"></span> km/hr
+                </li>
               </ul>
             </div>
           </div>
