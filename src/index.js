@@ -55,6 +55,8 @@ function showSearchWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   console.log(response.data);
 }
 
