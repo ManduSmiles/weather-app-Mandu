@@ -57,7 +57,31 @@ function showSearchWeather(response) {
   );
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+
   console.log(response.data);
+}
+
+///shows the forecast weather repeating for each day
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <span class="material-symbols-outlined forecast-icon"
+                  >thunderstorm</span
+                >
+                <div class="weather-forecast-temperature">4°C</div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 //gets current position when that button is clicked
@@ -105,3 +129,4 @@ let celsiusLink = document.querySelector("#celcius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Newmarket");
+displayForecast();

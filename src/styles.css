@@ -86,15 +86,12 @@ li {
 .material-symbols-outlined {
   font-size: 30px;
 }
-.col-2 {
+.weather-forecast {
   margin-top: 25px;
   text-align: center;
 }
-.weather-icon {
-  color: #007cb9;
-  margin: 25px auto;
-  font-size: 50px;
-}
-.footer {
-  margin-top: 100px;
+.forecast-icon {
+  display: block;
+  font-size: 45px;
+  padding: 10px;
 }
