@@ -22,7 +22,7 @@ let currentTime = document.querySelector("#currentTimeDisplay");
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
 let units = "metric";
-let apiKey = "f26f2823d9c6f82b0d99ff14bc39b859";
+let apiKey = "ca0db41e2e878c74a1dfc7ffece370d4";
 
 function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
