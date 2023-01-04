@@ -36,6 +36,12 @@ function searchCityValue(event) {
   search(city);
 }
 
+//grabbing the forecast data from city coordinates
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //displays the weather information when city is entered into search field or after current location button is selected
 function showSearchWeather(response) {
   let displayCity = document.querySelector("h1");
@@ -58,11 +64,12 @@ function showSearchWeather(response) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
 
-  console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 ///shows the forecast weather repeating for each day
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -129,4 +136,4 @@ let celsiusLink = document.querySelector("#celcius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Newmarket");
-displayForecast();
+//displayForecast();
