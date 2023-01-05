@@ -54,6 +54,12 @@ function showSearchWeather(response) {
 
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#current-icon").innerHTML = `
+    <img
+      class="current-icon"
+      src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+      alt="" width="150"
+    />`;
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -65,6 +71,7 @@ function showSearchWeather(response) {
   fahrenheitLink.classList.remove("active");
 
   getForecast(response.data.coord);
+  console.log(response.data);
 }
 
 ///converts the dt in the data to days of the week

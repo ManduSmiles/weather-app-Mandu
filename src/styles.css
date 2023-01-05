@@ -56,7 +56,7 @@ li {
 }
 .weather-app {
   background: rgba(255, 255, 255, 0.4);
-  border: 1px solid;
+
   border-radius: 10px;
   color: #36454f;
   padding: 20px;
@@ -78,13 +78,12 @@ li {
 .current-weather-temp .active {
   color: #36454f;
 }
-.current {
-  color: #007cb9;
+.current-icon {
   font-size: 125px;
-  margin: 50px 20px 50px;
 }
 .material-symbols-outlined {
   font-size: 30px;
+  padding-right: 10px;
 }
 .weather-forecast {
   margin-top: 25px;
