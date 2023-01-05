@@ -10,7 +10,7 @@ button {
   color: #ff5722;
   padding: 0px;
   position: relative;
-  top: 5px;
+  top: 10px;
 }
 button:hover {
   animation: pulse 1s infinite;
@@ -55,8 +55,7 @@ li {
   margin: 25px auto;
 }
 .weather-app {
-  background: rgba(227, 246, 245, 0.95);
-
+  background: rgba(167, 202, 202, 0.95);
   border-radius: 10px;
   color: #36454f;
   padding: 20px;
@@ -66,7 +65,7 @@ li {
 }
 .temperature {
   margin-left: 20px;
-  top: -20px;
+
   position: relative;
   font-size: 100px;
 }
@@ -85,15 +84,19 @@ li {
   font-size: 30px;
   padding-right: 10px;
 }
+.col-2 {
+  background: rgba(54, 69, 79, 0.2);
+
+  border-radius: 10px;
+  margin: 0 3px;
+  width: 15.666667%;
+}
 .weather-forecast {
   margin-top: 25px;
   text-align: center;
 }
-.forecast-icon {
-  display: block;
-  font-size: 45px;
-  padding: 10px;
-}
+
 .footer {
+  background-color: rgba(54, 69, 79, 0.5);
   color: #ffff;
 }

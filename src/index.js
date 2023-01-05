@@ -22,7 +22,7 @@ let currentTime = document.querySelector("#currentTimeDisplay");
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
 let units = "metric";
-let apiKey = "ca0db41e2e878c74a1dfc7ffece370d4";
+let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
 
 function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -101,10 +101,10 @@ function displayForecast(response) {
                 )}</div>
                 <img class="forecast-icon" src="http://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
-                }@2x.png" alt=""/>
+                }@2x.png" alt="" width="40"/>
                 <div class="weather-forecast-temperature">${Math.round(
                   forecastDay.temp.max
-                )}°C</div>
+                )}°</div>
               </div>`;
     }
   });
