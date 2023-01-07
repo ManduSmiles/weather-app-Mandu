@@ -21,6 +21,21 @@ let day = days[now.getDay()];
 let currentTime = document.querySelector("#currentTimeDisplay");
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
+//changing background image
+let background = document.querySelector("#background");
+let appWrapper = document.querySelector("#weather-app");
+if (hours >= 7) {
+  background.classList.add("day");
+  background.classList.remove("night");
+  appWrapper.classList.add("day-active");
+  appWrapper.classList.remove("night-active");
+} else {
+  background.classList.add("night");
+  background.classList.remove("day");
+  appWrapper.classList.add("night-active");
+  appWrapper.classList.remove("day-active");
+}
+
 let units = "metric";
 let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
 
@@ -71,7 +86,6 @@ function showSearchWeather(response) {
   fahrenheitLink.classList.remove("active");
 
   getForecast(response.data.coord);
-  console.log(response.data);
 }
 
 ///converts the dt in the data to days of the week
@@ -79,7 +93,6 @@ function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
   return days[day];
 }
 
@@ -91,7 +104,6 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    console.log(forecastDay);
     if (index < 7 && index > 0) {
       forecastHTML =
         forecastHTML +
@@ -104,10 +116,10 @@ function displayForecast(response) {
                   forecastDay.weather[0].icon
                 }@2x.png" alt="" width="40"/>
                 <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-max">${Math.round(
+                <span class="weather-forecast-temperature-max" id="max-temp">${Math.round(
                   forecastDay.temp.max
                 )}°    </span>
-                <span class="weather-forecast-temperature-min">${Math.round(
+                <span class="weather-forecast-temperature-min" id="min-temp">${Math.round(
                   forecastDay.temp.min
                 )}° </span>
               
@@ -133,6 +145,7 @@ function displayFahrenheitTemp(event) {
   let temperatureElement = document.querySelector("#temperature");
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
 }

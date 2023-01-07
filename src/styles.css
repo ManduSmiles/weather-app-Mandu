@@ -1,9 +1,17 @@
 body {
   font-family: "Poppins", sans-serif;
+}
+.day {
   background: url("../images/forest.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
+.night {
+  background: url("../images/clear-night-stars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 button {
   background-color: transparent;
   border: none;
@@ -53,10 +61,16 @@ li {
   max-width: 700px;
   margin: 25px auto;
 }
-.weather-app {
+.day-active {
   background: rgba(167, 202, 202, 0.95);
   border-radius: 10px;
   color: #36454f;
+  padding: 20px;
+}
+.night-active {
+  background: rgba(169, 181, 203, 0.75);
+  border-radius: 10px;
+  color: #000;
   padding: 20px;
 }
 .current-description {
@@ -64,7 +78,6 @@ li {
 }
 .temperature {
   margin-left: 20px;
-
   position: relative;
   font-size: 100px;
 }
