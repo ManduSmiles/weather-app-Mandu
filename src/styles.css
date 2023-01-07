@@ -93,8 +93,15 @@ li {
   margin-top: 25px;
   text-align: center;
 }
+.weather-forecast-date {
+  font-size: 18px;
+  font-weight: 100px;
+}
 .weather-forecast-temperature {
   font-size: 16px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.7;
 }
 .footer {
   background-color: rgba(54, 69, 79, 0.5);
