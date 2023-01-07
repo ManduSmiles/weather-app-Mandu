@@ -24,7 +24,7 @@ currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 //changing background image
 let background = document.querySelector("#background");
 let appWrapper = document.querySelector("#weather-app");
-if (hours >= 7) {
+if (hours >= 7 && hours <= 18) {
   background.classList.add("day");
   background.classList.remove("night");
   appWrapper.classList.add("day-active");
