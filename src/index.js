@@ -1,39 +1,42 @@
-let now = new Date();
+function showTime() {
+  let now = new Date();
 
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let currentTime = document.querySelector("#currentTimeDisplay");
-currentTime.innerHTML = `${day} ${hours}:${minutes}`;
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let currentTime = document.querySelector("#currentTimeDisplay");
+  currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
-//changing background image
-let background = document.querySelector("#background");
-let appWrapper = document.querySelector("#weather-app");
-if (hours >= 7 && hours <= 18) {
-  background.classList.add("day");
-  background.classList.remove("night");
-  appWrapper.classList.add("day-active");
-  appWrapper.classList.remove("night-active");
-} else {
-  background.classList.add("night");
-  background.classList.remove("day");
-  appWrapper.classList.add("night-active");
-  appWrapper.classList.remove("day-active");
+  //changing background image
+
+  let background = document.querySelector("#background");
+  let appWrapper = document.querySelector("#weather-app");
+  if (hours >= 7 && hours <= 18) {
+    background.classList.add("day");
+    background.classList.remove("night");
+    appWrapper.classList.add("day-active");
+    appWrapper.classList.remove("night-active");
+  } else {
+    background.classList.add("night");
+    background.classList.remove("day");
+    appWrapper.classList.add("night-active");
+    appWrapper.classList.remove("day-active");
+  }
 }
 
 let units = "metric";
@@ -64,7 +67,7 @@ function showSearchWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = temperature;
-
+  console.log(response.data);
   celsiusTemperature = temperature;
 
   document.querySelector("#current-description").innerHTML =
@@ -87,7 +90,6 @@ function showSearchWeather(response) {
 
   getForecast(response.data.coord);
 }
-
 ///converts the dt in the data to days of the week
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -102,9 +104,10 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-
+  showTime();
   forecast.forEach(function (forecastDay, index) {
     if (index < 7 && index > 0) {
+      console.log(forecastDay);
       forecastHTML =
         forecastHTML +
         `
@@ -177,4 +180,5 @@ let celsiusLink = document.querySelector("#celcius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Newmarket");
+//showTime();
 //displayForecast();
