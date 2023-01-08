@@ -124,8 +124,7 @@ function displayForecast(response) {
                 )}°    </span>
                 <span class="weather-forecast-temperature-min" id="min-temp">${Math.round(
                   forecastDay.temp.min
-                )}° </span>
-              
+                )}° </span>   
                 </div>
               </div>`;
     }
@@ -180,5 +179,3 @@ let celsiusLink = document.querySelector("#celcius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Newmarket");
-//showTime();
-//displayForecast();
